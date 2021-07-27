@@ -7,7 +7,31 @@
 </head>
 
 <body>
-    <p>Hello World</p>
+    <h1>Regular Expression Playground</h1>
+    <div class="outputString">
+        <p id="outputSource">source string</p>
+        <p id="outputEdited">match string</p>
+    </div>
+    <form class="inputString">
+        <p>
+            <label for="source">Source</label>
+            <input type="text" id="source" name="inputSource">
+        </p>
+        <p>
+            <label for="match">Match</label>
+            <input type="text" id="match" name="inputMatch">
+        </p>
+        <p>
+            <label for="replace">Replace</label>
+            <input type="text" id="replace" name="inputReplace">
+        </p>
+    </form>
+    <form class="clickButton">
+        <p>
+            <button type="button" id="matchButton">Match</button>
+            <button type="button" id="replaceButton">Replace</button>
+        </p>
+    </form>
 </body>
 
 </html>
