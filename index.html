@@ -4,32 +4,39 @@
 <head>
     <meta charset="utf-8">
     <title>Regular Expression Playground</title>
+    <link rel="icon" href="about:blank" type="image/x-icon">
+
+    <script src="script/app.js" defer></script>
 </head>
 
 <body>
-    <h1>Regular Expression Playground</h1>
-    <div class="outputString">
-        <p id="outputSource">source string</p>
-        <p id="outputEdited">match string</p>
+    <div id="outputZone">
+        <h1>Regular Expression Playground</h1>
+        <p id="outputSource">Source string</p>
+        <p id="outputModified">Modified string</p>
     </div>
-    <form class="inputString">
+    <form id="inputZone">
         <p>
-            <label for="source">Source</label>
-            <input type="text" id="source" name="inputSource">
+            <label for="inputSource">Source</label>
+            <input type="text" id="inputSource" name="source">
         </p>
         <p>
-            <label for="match">Match</label>
-            <input type="text" id="match" name="inputMatch">
+            <label for="inputMatch">Match</label>
+            <input type="text" id="inputMatch" name="match">
         </p>
         <p>
-            <label for="replace">Replace</label>
-            <input type="text" id="replace" name="inputReplace">
+            <label for="inputReplace">Replace</label>
+            <input type="text" id="inputReplace" name="replace">
         </p>
     </form>
-    <form class="clickButton">
+    <form id="buttonZone">
         <p>
-            <button type="button" id="matchButton">Match</button>
-            <button type="button" id="replaceButton">Replace</button>
+            <button type="button" class="regExpButton" id="matchButton">
+                Match
+            </button>
+            <button type="button" class="regExpButton" id="replaceButton">
+                Replace
+            </button>
         </p>
     </form>
 </body>
