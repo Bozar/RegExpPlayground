@@ -18,18 +18,22 @@
     <form id="inputZone">
         <p>
             <label for="inputSource">Source</label>
-            <input type="text" class="regExpInput" id="inputSource" name="source">
+            <input type="text" class="regExpInput" id="inputSource">
         </p>
         <p>
             <label for="inputMatch">Match</label>
-            <input type="text" class="regExpInput" id="inputMatch" name="match">
+            <input type="text" class="regExpInput" id="inputMatch">
         </p>
         <p>
             <label for="inputReplace">Replace</label>
-            <input type="text" class="regExpInput" id="inputReplace" name="replace">
+            <input type="text" class="regExpInput" id="inputReplace">
         </p>
     </form>
     <form id="buttonZone">
+        <p>
+            <input type="checkbox" id="resetCheckBox" checked>
+            <label for="resetCheckBox">Reset input on refresh</label>
+        </p>
         <p>
             <button type="button" class="regExpButton" id="matchButton">
                 Match

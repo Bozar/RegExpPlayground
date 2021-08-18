@@ -7,19 +7,32 @@ app.onClickButton = function () {
   const inputMatch = document.getElementById('inputMatch')
   const inputReplace = document.getElementById('inputReplace')
   const outputSource = document.getElementById('outputSource')
+  const outputModified = document.getElementById('outputModified')
 
-  if (inputSource.value === '') {
+  const blankString = /^\s*$/
+  if (inputSource.value.match(blankString)) {
     window.alert('Source string required.')
     return
-  } else if (inputMatch.value === '') {
+  } else if (inputMatch.value.match(blankString)) {
     window.alert('Match pattern required.')
-    return
-  } else if ((this.id === 'replaceButton') && (inputReplace.value === '')) {
-    window.alert('Replace pattern required.')
     return
   }
 
-  outputSource.innerHTML = inputSource.value
+  const inputRegExp = /^(?:\s*\/)(.*)(?:\/)([igmsuy]*)(?:\s*)$/
+  const parseMatch = inputMatch.value.match(inputRegExp)
+  if (parseMatch === null) {
+    window.alert('Invalid match pattern.')
+    return
+  }
+  const pattern = inputMatch.value.match(inputRegExp)[1]
+  const flag = inputMatch.value.match(inputRegExp)[2]
+
+  outputSource.innerHTML = inputSource.value.replace(RegExp(pattern, flag),
+    '<span style="color:green;">$&</span>')
+  if (this.id === 'replaceButton') {
+    outputModified.innerHTML = inputSource.value.replace(RegExp(pattern, flag),
+      inputReplace.value)
+  }
 }
 
 app.clearInput = function () {
@@ -29,7 +42,11 @@ app.clearInput = function () {
 }
 
 window.onload = function () {
-  app.clearInput()
+  const resetInput = document.getElementById('resetCheckBox')
+
+  if (resetInput.checked) {
+    app.clearInput()
+  }
   for (const i of document.getElementsByClassName('regExpButton')) {
     i.addEventListener('click', app.onClickButton)
   }
