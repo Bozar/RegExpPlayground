@@ -5,29 +5,24 @@
     <meta charset="utf-8">
     <title>Regular Expression Playground</title>
     <link rel="icon" href="about:blank" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
 
     <script src="script/app.js" defer></script>
 </head>
 
 <body>
+    <h1>Regular Expression Playground</h1>
     <div id="outputZone">
-        <h1>Regular Expression Playground</h1>
         <p id="outputSource"><br></p>
         <p id="outputModified"><br></p>
     </div>
     <form id="inputZone">
-        <p>
-            <label for="inputSource">Source</label>
-            <input type="text" class="regExpInput" id="inputSource">
-        </p>
-        <p>
-            <label for="inputMatch">Match</label>
-            <input type="text" class="regExpInput" id="inputMatch">
-        </p>
-        <p>
-            <label for="inputReplace">Replace</label>
-            <input type="text" class="regExpInput" id="inputReplace">
-        </p>
+        <label for="inputSource">Source</label>
+        <input type="text" class="regExpInput" id="inputSource">
+        <label for="inputMatch">Match</label>
+        <input type="text" class="regExpInput" id="inputMatch">
+        <label for="inputReplace">Replace</label>
+        <input type="text" class="regExpInput" id="inputReplace">
     </form>
     <form id="buttonZone">
         <p>

@@ -24,11 +24,19 @@ app.onClickButton = function () {
     window.alert('Invalid match pattern.')
     return
   }
+
   const pattern = inputMatch.value.match(inputRegExp)[1]
   const flag = inputMatch.value.match(inputRegExp)[2]
-
-  outputSource.innerHTML = inputSource.value.replace(RegExp(pattern, flag),
-    '<span style="color:green;">$&</span>')
+  const replaceWith = '<em>$&</em>'
+  try {
+    outputSource.innerHTML = inputSource.value.replace(RegExp(pattern, flag),
+      replaceWith)
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      window.alert('Invalid match pattern.')
+      return
+    }
+  }
   if (this.id === 'replaceButton') {
     outputModified.innerHTML = inputSource.value.replace(RegExp(pattern, flag),
       inputReplace.value)

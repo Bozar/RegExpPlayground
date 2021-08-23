@@ -1,0 +1,19 @@
+em {
+    background-color: #F8B945;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#inputZone {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 5px;
+}
+
+#inputZone label {
+    text-align: right;
+}
